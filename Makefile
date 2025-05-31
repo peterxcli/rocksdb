@@ -2092,8 +2092,8 @@ ROCKSDB_JAVADOCS_JAR = rocksdbjni-$(ROCKSDB_JAVA_VERSION)-javadoc.jar
 ROCKSDB_SOURCES_JAR = rocksdbjni-$(ROCKSDB_JAVA_VERSION)-sources.jar
 SHA256_CMD = sha256sum
 
-ZLIB_VER ?= 1.2.12
-ZLIB_SHA256 ?= 91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9
+ZLIB_VER ?= 1.3.1
+ZLIB_SHA256 ?= 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
 ZLIB_DOWNLOAD_BASE ?= http://zlib.net
 BZIP2_VER ?= 1.0.8
 BZIP2_SHA256 ?= ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
@@ -2272,7 +2272,7 @@ endif
 	$(MAKE) clean-ext-libraries-bin
 	$(MAKE) clean-rocks
 	ARCHFLAG="-arch $*" $(MAKE) rocksdbjavastatic_deps
-	ARCHFLAG="-arch $*" $(MAKE) rocksdbjavastatic_libobjects
+	ARCHFLAG="-arch $*" $(MAKE) rocksdbjavastatic_libobjects FAIL_ON_WARNINGS=0 EXTRA_CXXFLAGS="-Wno-error -Wno-unused-variable"
 	ARCHFLAG="-arch $*" ROCKSDBJNILIB="librocksdbjni-osx-$*.jnilib" $(MAKE) rocksdbjavastatic_javalib
 
 ifeq ($(JAR_CMD),)
