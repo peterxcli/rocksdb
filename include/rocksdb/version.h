@@ -14,6 +14,7 @@
 #define ROCKSDB_MAJOR 7
 #define ROCKSDB_MINOR 7
 #define ROCKSDB_PATCH 3
+#define ROCKSDB_BUILD 2
 
 // Do not use these. We made the mistake of declaring macros starting with
 // double underscore. Now we have to live with our choice. We'll deprecate these
@@ -21,6 +22,7 @@
 #define __ROCKSDB_MAJOR__ ROCKSDB_MAJOR
 #define __ROCKSDB_MINOR__ ROCKSDB_MINOR
 #define __ROCKSDB_PATCH__ ROCKSDB_PATCH
+#define __ROCKSDB_BUILD__ ROCKSDB_BUILD
 
 namespace ROCKSDB_NAMESPACE {
 // Returns a set of properties indicating how/when/where this version of RocksDB
